@@ -6,12 +6,40 @@ const SolveProblem = () => {
 const [text, setText] = useState('');
 const [messages, setMessages] = useState([]);
 const keyboardVerticalOffset = 660;
-
-const dataa = [{message:text,from:'user'}]
-
+// const dataa = [{message:text,from:'user'}]
+const data=['程設考不好 可能的原因?','解決辦法有什麼呢?(若不止一項可以以1. 2. 3. 標示條列才能讓我看懂喔！)'];
 // const dataa = [{message:'程設考不好',from:'user'},{message:'社團的事情',from:'user'},{message:'常遲到',from:'user'},{message:'沒有好好念',from:'user'},{message:'沒有確實吸收',from:'user'},
 // {message:'把更多時間留給這個科目',from:'user'},{message:'提早看並且多看幾遍',from:'user'},{message:'程設考不好的可能原因?',from:'bot'},{message:'解決辦法?',from:'bot'}]
-
+const [count, setcount]=useState(-1);
+// function Robotreturn() {
+//     while(messages==='1')return(
+//         <View>
+//             <Image style={{ marginTop:16, marginLeft:16}} source={require('../img/btn_event1.png')} />
+//             <View style={{flexDirection:'row', marginTop:16}}>
+//                 <Image style={{resizeMode:'contain', width:50, height: 50, marginLeft:16}} source={require('../img/img_chatface.png')}/>
+//                 <Image style = {{resizeMode:'contain', width:25, marginLeft:5}} source = {require('../img/img_chatboxline.png')} />
+//                 <ImageBackground style={{width: 220, height:100, marginLeft:-15}} source={require('../img/img_chatbox.png')}>
+//                     <View style={{width: 200, paddingTop:16, paddingLeft:26}}>
+//                         <Text style={{lineHeight:21, fontSize: 14, color:'#393939'}}>程設考不好 可能的原因?</Text>
+//                     </View>
+//                 </ImageBackground>
+//             </View>
+//         </View>
+//     );
+//     while(messages==='2')return(
+//         <View>
+//             <View style={{flexDirection:'row', marginTop:16}}>
+//                 <Image style={{resizeMode:'contain', width:50, height: 50, marginLeft:16}} source={require('../img/img_chatface.png')}/>
+//                 <Image style = {{resizeMode:'contain', width:25, marginLeft:5}} source = {require('../img/img_chatboxline.png')} />
+//                 <ImageBackground style={{width: 220, height:100, marginLeft:-15}} source={require('../img/img_chatbox.png')}>
+//                     <View style={{width: 200, paddingTop:16, paddingLeft:26}}>
+//                         <Text style={{lineHeight:21, fontSize: 14, color:'#393939'}}>解決辦法有什麼呢?(若不止一項可以以1. 2. 3. 標示條列才能讓我看懂喔！)</Text>
+//                     </View>
+//                 </ImageBackground>
+//             </View>
+//         </View>
+//     );
+// }
     return (
     <View style={{backgroundColor: '#E0F3F1'}}> 
         <ScrollView style={{height:575}}>       
@@ -19,37 +47,32 @@ const dataa = [{message:text,from:'user'}]
             <View style={{flexDirection:'row', marginTop:26}}>
                 <Image style={{resizeMode:'contain', width:50, height: 50, marginLeft:16}} source={require('../img/img_chatface.png')}/>
                 <Image style = {{resizeMode:'contain', width:25, marginLeft:5}} source = {require('../img/img_chatboxline.png')} />
-                <ImageBackground style={{width: 215, height:125, marginLeft:-6}} source={require('../img/img_chatbox.png')}>
-                    <View style={{width: 200, paddingTop:16, paddingLeft:16}}>
-                        <Text style={{lineHeight:21, fontSize: 14, color:'#393939'}}>哈囉！最近有哪些事情讓你煩惱呢?{"\n"}(以1.2.3. 標示條列才能讓我看懂喔！)</Text>
+                <ImageBackground style={{width: 215, height:75, marginLeft:-12}} source={require('../img/img_chatbox.png')}>
+                    <View style={{width: 200, paddingTop:16, paddingLeft:20}}>
+    <Text style={{lineHeight:21, fontSize: 14, color:'#393939'}}>哈囉！最近有什麼事情讓你煩惱呢?</Text>
                     </View>
                 </ImageBackground>
             </View>
-            <View style ={{marginTop:16}}>
-                <View>
+            <View>
                     {
                     messages.map((message, i) => {
                         return(
-                            <View>
+                            <View style={{marginTop:16}}>
                                 <Text style={{backgroundColor:'#CEE5F7',width:180, height:85,paddingHorizontal:16, paddingVertical:10, marginLeft:175}} key={i}>{message}</Text>
-                                <View style={{flexDirection:'row', marginTop:16, marginLeft:16}}>
-                                    <Image source={require('../img/btn_event1.png')} />
-                                    <Image style={{marginLeft:16}} source={require('../img/btn_plus.png')} />
-                                </View>
                                 <View style={{flexDirection:'row', marginTop:16}}>
-                <Image style={{resizeMode:'contain', width:50, height: 50, marginLeft:16}} source={require('../img/img_chatface.png')}/>
-                <Image style = {{resizeMode:'contain', width:25, marginLeft:5}} source = {require('../img/img_chatboxline.png')} />
-                <ImageBackground style={{width: 220, height:100, marginLeft:-15}} source={require('../img/img_chatbox.png')}>
-                    <View style={{width: 200, paddingTop:16, paddingLeft:26}}>
-                        <Text style={{lineHeight:21, fontSize: 14, color:'#393939'}}>程設考不好 可能的原因?(以1. 2. 3. 標示條列才能讓我看懂喔!)</Text>
-                    </View>
-                </ImageBackground>
-            </View>
-
+                                    <Image style={{resizeMode:'contain', width:50, height: 50, marginLeft:16}} source={require('../img/img_chatface.png')}/>
+                                    <Image style = {{resizeMode:'contain', width:25, marginLeft:5}} source = {require('../img/img_chatboxline.png')} />
+                                    <ImageBackground style={{width: 220, height:100, marginLeft:-15}} source={require('../img/img_chatbox.png')}>
+                                        <View style={{width: 200, paddingTop:16, paddingLeft:26}}>
+                                            <Text style={{lineHeight:21, fontSize: 14, color:'#393939'}} key={i}>{data[count]}</Text>
+                                        </View>
+                                    </ImageBackground>
+                                </View>
                             </View> 
                         )})
-                    }    
-                </View>
+                        
+                    } 
+
             </View>
            
  {/* {           dataa.map(dataa => {
@@ -73,7 +96,7 @@ const dataa = [{message:text,from:'user'}]
         <View>
             <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={keyboardVerticalOffset}>
                 <View style={{backgroundColor:'#E0F3F1', width:380, height: 65}}>
-                <View style={{backgroundColor: '#fff', width:386.4, height:58, borderColor:'#378D8F', borderWidth:1,  borderRadius:30,marginTop:-15, marginLeft:16, flexDirection:'row', position:'absolute'}}>
+                <View style={{backgroundColor: '#fff', width:350, height:58, borderColor:'#378D8F', borderWidth:1,  borderRadius:30, marginLeft:16, flexDirection:'row', position:'absolute'}}>
                     <TextInput 
                         onChangeText={text => setText(text)}
                         value={text}
@@ -87,8 +110,9 @@ const dataa = [{message:text,from:'user'}]
                         onPress={()=> {
                             setMessages([...messages, text]);
                             setText('');
+                            setcount((count+1))
                         }}>
-                        <Image style={{marginTop:3,marginLeft:33}} source={require('../img/btn_send.png')}/>
+                        <Image style={{marginTop:3,marginLeft:5}} source={require('../img/btn_send.png')}/>
                     </TouchableOpacity>
                 </View>
                 </View>

@@ -15,16 +15,15 @@ const List = () => {
     return(
         <UpTab.Navigator
             tabBarOptions = {{
-                activeTintColor: '#269192',
-                inactiveTintColor: '#269192',
+                activeTintColor: '#236C66',
+                inactiveTintColor: '#6A7575',
                 labelStyle: {
-                    fontWeight: '700',
-                    fontSize: 14
+                    fontSize: 16
                 },
                 indicatorStyle: {
                     backgroundColor: '#e0f3f1',
                     height: 50,
-                    width: 137,
+                    width: 125,
                     borderRadius: 7,
                     shadowOffset: {height: 1},
                     shadowColor: "black",

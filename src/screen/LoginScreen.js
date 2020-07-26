@@ -61,10 +61,10 @@ const LoginScreen = ({ navigation }) => {
     return loading ? (
       <ActivityIndicator size="large" style={{ marginTop: 30 }} />
     ) : (
-      <Button
-        title="Sign in"
-        buttonStyle={{ backgroundColor: "#4AAF4C" }}
-        containerStyle={{ padding: 5 }}
+        <Button
+        title="登入"
+        buttonStyle={{ backgroundColor: "#42A3C0" }}
+        containerStyle={{ padding: 60, height:250 }}
         onPress={onSignIn}
       />
     );
@@ -72,37 +72,36 @@ const LoginScreen = ({ navigation }) => {
   
   return (
     <View style={{backgroundColor: '#E0F3F1'}}>
-        <Image source={require('../img/img_login_bubble.png')} />
-      <View style={styles.formStyle}>
-        <Input
-          labelStyle={{ marginTop: 20 }}
-          label="Email"
-          placeholder="xxx@gmail.com"
+        <Image source={require('../img/img_login_bubble.png')} style={{marginTop:150, marginLeft:110}} />
+        <Text style={{marginLeft:145, color:'#317AA8', fontSize:20, marginTop:20}}>解憂泡泡</Text>
+      <View>
+        <View style={{flexDirection:'row', width:220, height:50, backgroundColor:'#fff', borderRadius:13, marginLeft:60, marginTop:70}}>
+          <Image source={require('../img/icon_login_account.png')} style={{marginTop:10, marginLeft:10}} />
+         <Input
+          placeholder="帳戶"
           autoCorrect={false}
           autoCapitalize="none"
           keyboardType="email-address"
           value={email}
           onChangeText={(email) => setEmail(email)}
-        />
+          containerStyle={{backgroundColor:'#fff', borderRadius:13}}
+        /> 
+        </View>
+        
+        <View style={{flexDirection:'row', width:220, height:50, backgroundColor:'#fff', borderRadius:13, marginLeft:60, marginTop:20}}>
+          <Image source={require('../img/icon_login_password.png')} style={{marginTop:10, marginLeft:10}} />
         <Input
-          labelStyle={{ marginTop: 20 }}
-          label="Password"
-          placeholder="Must have at least 7 characters"
+          placeholder="密碼"
           secureTextEntry
           autoCorrect={false}
           autoCapitalize="none"
           value={password}
           onChangeText={(password) => setPassword(password)}
+          containerStyle={{backgroundColor:'#fff', borderRadius:13}}
         />
+        </View>
         {renderButton()}
         <Text style={{ padding: 10, fontSize: 16, color: "red" }}>{error}</Text>
-      </View>
-      <View style={styles.formStyle}>
-        <Button
-          title="Sign in with Facebook"
-          buttonStyle={{ backgroundColor: "#39579A" }}
-          containerStyle={{ padding: 5 }}
-        />
       </View>
       <Confirm
         title="Are you sure to create a new user?"
@@ -116,7 +115,7 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   formStyle: {
-    marginTop: 150,
+    marginTop: 80,
   },
 });
 

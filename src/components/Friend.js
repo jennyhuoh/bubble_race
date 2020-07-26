@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { apisAreAvailable } from 'expo';
+import { NavigationContainer } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Friend = () => {
     return(
@@ -8,26 +10,21 @@ const Friend = () => {
         <View style={styles.bg}>
            
             <View style={styles.friendbg}>
-               <Image style = {styles.friendbubble1} source = {require('../img/img_bubble_new.png')}/>
-               <Image style = {styles.friendbubble2} source = {require('../img/img_bubble_new.png')}/>
-               <Image style = {styles.friendbubble3} source = {require('../img/img_bubble_new.png')}/>            
-            </View>
-            <View style={styles.friendphoto}>
-               <Image style = {styles.tiffanyphoto} source = {require('../img/img_tiffanyphoto.png')}/>
-               <Image style = {styles.vickyphoto} source = {require('../img/img_vickyphoto.png')}/>
-               <Image style = {styles.candyphoto} source = {require('../img/img_candyphoto.png')}/>
+               <Image style = {styles.friendbubble} source = {require('../img/img_friend_pic3.png')}/>
+               <Image style = {styles.friendbubble} source = {require('../img/img_friend_pic2.png')}/>
+               <Image style = {styles.friendbubble} source = {require('../img/img_friend_pic1.png')}/>            
             </View>
             <View style ={styles.friendname}>
-                <Text style = {styles.friend1}>Tiffany Lai</Text>
-                <Text style = {styles.friend1_mes}>有一則未讀事件</Text>
-                <Text style = {styles.friend2}>Vicky Ho</Text>
-                <Text style = {styles.friend3}>Candy Kuan</Text>
+                <Text style = {styles.friend}>Tiffany Lai</Text>
+                
+                <Text style = {styles.friend1}>Vicky Ho</Text>
+                <Text style = {styles.friend1}>Candy Kuan</Text>
             </View>
-            {/* <View style ={styles.btnchatbubble}>
-                <Image style = {styles.chatbubble1} source = {require('../img/btn_chat_bubble.png')}/>
-                <Image style = {styles.chatbubble2} source = {require('../img/btn_chat_bubble.png')}/>
-                <Image style = {styles.chatbubble3} source = {require('../img/btn_chat_bubble.png')}/>
-            </View> */}
+            <View>
+                <TouchableOpacity>
+                    <Text style = {styles.friend1_mes}>有 1 則未讀事件</Text>
+                </TouchableOpacity>    
+            </View>
         </View>
     );
 }
@@ -41,79 +38,33 @@ const styles = StyleSheet.create({
         backgroundColor: '#E0F3F1',
         height: 680,
         marginTop:0,
-        
+        flexDirection:'row'
     },
-    friendbg:{
-        flexDirection:'column',
-    },
-    friendbubble1: {
+    friendbubble: {
         resizeMode: 'contain',
-        position: 'absolute',
-        width:100,
-        height:100,
-        marginTop:30,
-        marginLeft:16,
-    },
-    friendbubble2: {
-        resizeMode: 'contain',
-        position: 'absolute',
-        width:100,
-        height:100,
-        marginTop:160,
-        marginLeft:16,
-    },
-    friendbubble3: {
-        resizeMode: 'contain',
-        position: 'absolute',
-        width:100,
-        height:100,
-        marginTop:290,
-        marginLeft:16,
-    },
-    tiffanyphoto:{
-        resizeMode: 'contain',
-        position: 'absolute',
         width:80,
         height:80,
-        marginTop:40,
-        marginLeft:26,
+        marginTop:18,
+        marginLeft:16,
     },
-    vickyphoto:{
-        resizeMode: 'contain',
-        position: 'absolute',
-        width:80,
-        height:80,
-        marginTop:170,
-        marginLeft:26,
-    },
-    candyphoto:{
-        resizeMode: 'contain',
-        position: 'absolute',
-        width:80,
-        height:80,
-        marginTop:300,
-        marginLeft:26,
-    },
-    friend1:{
-        color: '#269C9B',
+    friend:{
+        color: '#2D7980',
+        fontSize:16,
+        marginTop: 50,
         fontSize:17,
-        position: 'absolute',
-        paddingLeft:136,
-        paddingTop:65,
-        fontSize:17,
+        marginLeft:20
     },
     friend1_mes:{
         fontWeight:'bold',
         color:'#317AA8',
-        paddingLeft:296,
-        paddingTop:68,
+        marginTop:52,
+        marginLeft:54
     },
-    friend2:{
-        color: '#269C9B',
-        fontSize:17,
-        position: 'absolute',
-        paddingLeft:136,
-        paddingTop:200,
+    friend1:{
+        color: '#2D7980',
+        fontSize:16,
+        marginLeft:20,
+        marginTop:75
     },
     friend3:{
         color: '#269C9B',

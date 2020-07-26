@@ -45,8 +45,9 @@ const AllTab = ({navigation}) => {
     <NavigationContainer
     initialState = {initialNavigationState}
     independent={true}
-    onStateChange = {(state) =>
-      AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))}>
+    // onStateChange = {(state) =>
+      // AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))}
+      >
       <Tab.Navigator
         tabBarOptions = {{
           activeTintColor: '#269C9B',
@@ -54,21 +55,6 @@ const AllTab = ({navigation}) => {
          
         }}
         >
-      <Tab.Screen name = "List"
-        component = {ListStackscreen}
-        options = {{
-          title: "事件管理",
-          tabBarIcon: ({focused}) => {
-            if(focused) {
-              return(
-                <Image style = {styles.tabicon} source = {require('../img/btn_tabmanage_pressed.png')}/>
-              )}
-            else {
-              return(
-                <Image style = {styles.tabicon} source = {require('../img/btn_tabmanage_unpress.png')}/>
-              )}
-          }
-        }}/>
       <Tab.Screen name = "SolveProblem"
         component = {SolveProblemStackscreen}
         options = {{
@@ -81,6 +67,21 @@ const AllTab = ({navigation}) => {
             else {
               return(
                 <Image style = {styles.tabicon} source = {require('../img/btn_tabadd_unpress.png')}/>
+              )}
+          }
+        }}/>
+        <Tab.Screen name = "List"
+        component = {ListStackscreen}
+        options = {{
+          title: "事件管理",
+          tabBarIcon: ({focused}) => {
+            if(focused) {
+              return(
+                <Image style = {styles.tabicon} source = {require('../img/btn_tabmanage_pressed.png')}/>
+              )}
+            else {
+              return(
+                <Image style = {styles.tabicon} source = {require('../img/btn_tabmanage_unpress.png')}/>
               )}
           }
         }}/>

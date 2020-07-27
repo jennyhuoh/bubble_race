@@ -17,8 +17,7 @@ const ListAll = () => {
                 <Image style = {styles.bubbleshadow} source = {require('../img/img_bubbleshadow.png')}/>
                 <Image style = {styles.bubbleshadow} source = {require('../img/img_bubbleshadow.png')}/>
             </View>
-                <Image style = {styles.eventbubble3} source = {require('../img/img_eventbubble3.png')}/>
-                <Image style = {styles.bubbleshadow3} source = {require('../img/img_bubbleshadow.png')}/>
+
             {/* <View style = {styles.eventlist2}>
                 <Image style = {styles.eventbubble} source = {require('../img/img_eventbubble.png')}/>
                 <Image style = {styles.eventbubble} source = {require('../img/img_eventbubble.png')}/>
@@ -43,6 +42,7 @@ const ListAll = () => {
             <Image style = {styles.imgbubble5} source = {require('../img/img_list_bubble.png')}/>
             
             <Image style = {styles.imgnet} source = {require('../img/img_list_net.png')}/>
+            <View style={{backgroundColor:'#64A3C7', position:'absolute', width: 415, height:85, marginTop:595}}></View>
         </View>
     );
 }
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     water: {
         position: 'absolute',
         resizeMode: 'contain',
-        width:375,
+        width:415,
         height:300,
         marginTop: 405,
         

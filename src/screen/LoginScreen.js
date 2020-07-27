@@ -61,22 +61,24 @@ const LoginScreen = ({ navigation }) => {
     return loading ? (
       <ActivityIndicator size="large" style={{ marginTop: 30 }} />
     ) : (
+      <View style={{backgroundColor: "#71B7CC", width:280, height:50, marginTop:60, borderRadius:20}}>
         <Button
         title="登入"
-        buttonStyle={{ backgroundColor: "#42A3C0" }}
-        containerStyle={{ padding: 60, height:250 }}
+        buttonStyle={{ backgroundColor: "#71B7CC" }}
+        containerStyle={{paddingTop:6, borderRadius:20}}
         onPress={onSignIn}
       />
+      </View>
     );
   };
   
   return (
-    <View style={{backgroundColor: '#E0F3F1'}}>
-        <Image source={require('../img/img_login_bubble.png')} style={{marginTop:150, marginLeft:110}} />
-        <Text style={{marginLeft:145, color:'#317AA8', fontSize:20, marginTop:20}}>解憂泡泡</Text>
+    <View style={{backgroundColor: '#E0F3F1', justifyContent:'center', alignContent:'center', alignItems:'center', height:900}}>
+        <Image source={require('../img/img_login_bubble.png')}/>
+        <Text style={{color:'#317AA8', fontSize:20, marginTop:20}}>解憂泡泡</Text>
       <View>
-        <View style={{flexDirection:'row', width:220, height:50, backgroundColor:'#fff', borderRadius:13, marginLeft:60, marginTop:70}}>
-          <Image source={require('../img/icon_login_account.png')} style={{marginTop:10, marginLeft:10}} />
+        <View style={{width:220, height:50, backgroundColor:'#fff', borderRadius:13, marginTop:70, flexDirection:'row'}}>
+          <Image source={require('../img/icon_login_account.png')} style={{marginTop:10, paddingLeft:60, resizeMode:'contain'}} />
          <Input
           placeholder="帳戶"
           autoCorrect={false}
@@ -88,8 +90,8 @@ const LoginScreen = ({ navigation }) => {
         /> 
         </View>
         
-        <View style={{flexDirection:'row', width:220, height:50, backgroundColor:'#fff', borderRadius:13, marginLeft:60, marginTop:20}}>
-          <Image source={require('../img/icon_login_password.png')} style={{marginTop:10, marginLeft:10}} />
+        <View style={{width:220, height:50, backgroundColor:'#fff', borderRadius:13, marginTop:25,flexDirection:'row'}}>
+          <Image source={require('../img/icon_login_password.png')} style={{marginTop:10, paddingLeft:60, resizeMode:'contain'}} />
         <Input
           placeholder="密碼"
           secureTextEntry

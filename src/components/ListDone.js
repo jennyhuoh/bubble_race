@@ -9,14 +9,9 @@ const ListDone = () => {
                 <View style = {styles.timebg}><Text style = {styles.times}>2020/08/11 星期二</Text></View>
 
             </View>
-            <View style = {styles.eventlist}>
                 <Image style = {styles.eventbubble} source = {require('../img/img_eventbubble1.png')}/>
-                <Image style = {styles.eventbubble} source = {require('../img/img_eventbubble2.png')}/> 
-            </View>
-            <View style = {styles.shadows}>
+
                 <Image style = {styles.bubbleshadow} source = {require('../img/img_bubbleshadow.png')}/>
-                <Image style = {styles.bubbleshadow} source = {require('../img/img_bubbleshadow.png')}/>
-            </View>
 
             <Image style = {styles.water} source = {require('../img/img_list_water.png')}/>
             <Image style = {styles.imgbubble1} source = {require('../img/img_list_bubble.png')}/>
@@ -26,6 +21,8 @@ const ListDone = () => {
             <Image style = {styles.imgbubble5} source = {require('../img/img_list_bubble.png')}/>
             
             <Image style = {styles.imgnet} source = {require('../img/img_list_net.png')}/>
+            <View style={{backgroundColor:'#64A3C7', position:'absolute', width: 415, height:85, marginTop:595}}></View>
+
         </View>
     );
 }
@@ -98,7 +95,8 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         width:100,
         height:100,
-        marginRight: 25,
+        marginLeft:51,
+        marginTop:16,
     },
     shadows: {
         flexDirection: 'row',
@@ -113,7 +111,8 @@ const styles = StyleSheet.create({
         justifyContent:'space-around'
     },
     bubbleshadow: {
-        marginRight: 22
+        marginLeft:73,
+        marginTop:10,
     },
     // time: {
     //     flexDirection: 'row',
@@ -147,7 +146,7 @@ const styles = StyleSheet.create({
     water: {
         position: 'absolute',
         resizeMode: 'contain',
-        width:375,
+        width:415,
         height:300,
         marginTop: 405,
         

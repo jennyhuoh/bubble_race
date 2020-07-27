@@ -23,16 +23,12 @@ const List = () => {
                 indicatorStyle: {
                     backgroundColor: '#e0f3f1',
                     height: 50,
-                    width: 125,
+                    width: 132,
                     borderRadius: 7,
                     shadowOffset: {height: 1},
                     shadowColor: "black",
                     shadowOpacity: 0.2,
                 },
-                tabStyle: {
-                    borderColor: 'rgba(0,0,0,0.1)',
-                    borderWidth: 0.5
-                }
             }}>
             <UpTab.Screen name = "所有"
                 component = {ListAll}/>

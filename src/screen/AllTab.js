@@ -43,7 +43,7 @@ const AllTab = ({navigation}) => {
   } else {
     return (
     <NavigationContainer
-    initialState = {initialNavigationState}
+    // initialState = {initialNavigationState}
     independent={true}
     // onStateChange = {(state) =>
       // AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))}

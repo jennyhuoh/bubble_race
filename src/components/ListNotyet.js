@@ -6,11 +6,11 @@ const ListNotyet = () => {
     return(
         <View style = {styles.listallbg}>
              <View style = {styles.time}>
-                <View style = {styles.timebg}><Text style = {styles.times}>2020/05/12 星期二</Text></View>
+                <View style = {styles.timebg}><Text style = {styles.times}>2020/08/11 星期二</Text></View>
 
             </View>
 
-                <Image style = {styles.eventbubble} source = {require('../img/img_eventbubble3.png')}/>
+            <Image style = {styles.eventbubble} source = {require('../img/img_eventbubble2.png')}/> 
 
 
                 <Image style = {styles.bubbleshadow} source = {require('../img/img_bubbleshadow.png')}/>
@@ -24,6 +24,8 @@ const ListNotyet = () => {
             <Image style = {styles.imgbubble5} source = {require('../img/img_list_bubble.png')}/>
             
             <Image style = {styles.imgnet} source = {require('../img/img_list_net.png')}/>
+            <View style={{backgroundColor:'#64A3C7', position:'absolute', width: 415, height:85, marginTop:595}}></View>
+
         </View>
     );
 }
@@ -147,7 +149,7 @@ const styles = StyleSheet.create({
     water: {
         position: 'absolute',
         resizeMode: 'contain',
-        width:375,
+        width:415,
         height:300,
         marginTop: 405,
         

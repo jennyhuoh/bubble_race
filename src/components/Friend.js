@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     bg: {
         backgroundColor: '#E0F3F1',
-        height: 680,
+        height: 725,
         marginTop:0,
         flexDirection:'row'
     },
